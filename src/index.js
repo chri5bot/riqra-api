@@ -13,12 +13,12 @@ const server = new ApolloServer({
 server.listen(API_PORT).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 
-  // db.sequelize
-  //   .authenticate()
-  //   .then(() => {
-  //     console.log("Connection has been established successfully.");
-  //   })
-  //   .catch(err => {
-  //     console.error("Unable to connect to the database:", err);
-  //   });
+  db.sequelize
+    .authenticate()
+    .then(() => {
+      console.log("Connection has been established successfully.");
+    })
+    .catch(err => {
+      console.error("Unable to connect to the database:", err);
+    });
 });
