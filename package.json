@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "backpack",
+    "build": "backpack build",
+    "start": "node ./build/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Torres",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "backpack-core": "^0.8.3",
+    "dataloader-sequelize": "^1.7.10",
+    "dotenv": "^7.0.0",
+    "graphql": "^14.2.1",
+    "lodash": "^4.17.11",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.3.2",
+    "uuid": "^3.3.2"
+  }
+}
