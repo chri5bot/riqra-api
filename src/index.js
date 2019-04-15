@@ -29,16 +29,4 @@ server.applyMiddleware({ app });
 
 const httpServer = createServer(app);
 
-httpServer.listen(PORT, () => {
-  console.log(
-    `🚀 Server ready at http://localhost:${API_PORT}${server.graphqlPath}`
-  );
-  db.sequelize
-    .authenticate()
-    .then(() => {
-      console.log("Connection has been established successfully.");
-    })
-    .catch(err => {
-      console.error("Unable to connect to the database:", err);
-    });
-});
+httpServer.listen(PORT, "0.0.0.0");
