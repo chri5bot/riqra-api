@@ -10,7 +10,7 @@ const server = new ApolloServer({
   context: { db }
 });
 
-server.listen({ API_PORT }).then(({ url }) => {
+server.listen({ API_PORT || 3001 }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 
   db.sequelize
