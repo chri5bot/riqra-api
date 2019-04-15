@@ -29,7 +29,7 @@ server.applyMiddleware({ app });
 
 const httpServer = createServer(app);
 
-httpServer.listen(PORT, "0.0.0.0", () => {
+httpServer.listen(PORT, () => {
   console.log(
     `🚀 Server ready at http://localhost:${API_PORT}${server.graphqlPath}`
   );
