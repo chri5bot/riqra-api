@@ -18,7 +18,7 @@ const path = "/graphql";
 app.use(query());
 server.applyMiddleware({ app, path });
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`🚀 Server ready at ${PORT}${server.graphqlPath}`);
   db.sequelize
     .authenticate()
