@@ -8,21 +8,20 @@ import db from "./models";
 
 import { API_PORT } from "./config";
 
-
 const corsOptions = {
-  origin: 'http://181.199.74.186:3000',
+  origin: "http://181.199.74.186:3000",
   credentials: true
-}
+};
 
 const app = express();
-app.use(cors();
+app.use(cors());
 
 const server = new ApolloServer({
   schema,
   context: { db }
 });
 
-server.applyMiddleware({ app, cors: corsOptions  });
+server.applyMiddleware({ app, cors: corsOptions });
 
 const httpServer = createServer(app);
 
