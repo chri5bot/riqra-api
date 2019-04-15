@@ -1,6 +1,5 @@
-const connect = require("connect");
+const express = require("express");
 import { ApolloServer } from "apollo-server-express";
-const query = require("qs-middleware");
 
 import schema from "./schema";
 import db from "./models";
@@ -12,13 +11,13 @@ const server = new ApolloServer({
   context: { db }
 });
 
-const app = connect();
-const path = "/graphql";
+const app = express();
+server.applyMiddleware({ app });
 
 app.use(query());
 server.applyMiddleware({ app, path });
 
-app.listen(PORT, () => {
+app.listen({ port: PORT }, () => {
   console.log(`🚀 Server ready at ${PORT}${server.graphqlPath}`);
   db.sequelize
     .authenticate()
