@@ -2,6 +2,7 @@ import { ApolloServer } from "apollo-server-express";
 import { createServer } from "http";
 import express from "express";
 import cors from "cors";
+import path from "path";
 
 import schema from "./schema";
 import db from "./models";
@@ -17,6 +18,12 @@ const corsOptions = {
 
 const app = express();
 app.use(cors());
+
+app.use(express.static("public"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+});
 
 const server = new ApolloServer({
   schema,
