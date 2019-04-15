@@ -19,8 +19,10 @@
   "homepage": "https://github.com/chri5bot/riqra-api#readme",
   "dependencies": {
     "apollo-server-express": "^2.4.8",
+    "connect": "^3.6.6",
     "express": "^4.16.4",
-    "graphql": "^14.2.1"
+    "graphql": "^14.2.1",
+    "qs-middleware": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
