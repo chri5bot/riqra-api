@@ -7,9 +7,7 @@ import path from "path";
 import schema from "./schema";
 import db from "./models";
 
-import { API_PORT } from "./config";
-
-const PORT = API_PORT || 3000;
+import { PORT } from "./config";
 
 const app = express();
 app.use(cors());
@@ -30,9 +28,7 @@ server.applyMiddleware({ app });
 const httpServer = createServer(app);
 
 httpServer.listen(PORT, () => {
-  console.log(
-    `🚀 Server ready at http://localhost:${API_PORT}${server.graphqlPath}`
-  );
+  console.log(`🚀 Server ready at ${PORT}${server.graphqlPath}`);
   db.sequelize
     .authenticate()
     .then(() => {
