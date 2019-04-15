@@ -8,6 +8,8 @@ import db from "./models";
 
 import { API_PORT } from "./config";
 
+const PORT = API_PORT || 3000;
+
 const corsOptions = {
   origin: "http://181.199.74.186:3000",
   credentials: true
@@ -25,7 +27,7 @@ server.applyMiddleware({ app, cors: corsOptions });
 
 const httpServer = createServer(app);
 
-httpServer.listen(API_PORT, () => {
+httpServer.listen(PORT, () => {
   console.log(
     `🚀 Server ready at http://localhost:${API_PORT}${server.graphqlPath}`
   );
