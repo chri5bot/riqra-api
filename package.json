@@ -1,33 +1,27 @@
 {
-  "name": "riqra-api",
+  "name": "api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chri5bot/riqra-api.git"
+    "dev": "backpack",
+    "build": "backpack build",
+    "start": "node ./build/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Christian Torres",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chri5bot/riqra-api/issues"
-  },
-  "homepage": "https://github.com/chri5bot/riqra-api#readme",
   "dependencies": {
     "apollo-server-express": "^2.4.8",
-    "connect": "^3.6.6",
+    "backpack-core": "^0.8.3",
+    "cors": "^2.8.5",
+    "dataloader-sequelize": "^1.7.10",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "graphql": "^14.2.1",
-    "qs-middleware": "^1.0.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "nodemon": "^1.18.11"
+    "lodash": "^4.17.11",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.3.2",
+    "uuid": "^3.3.2"
   }
 }
