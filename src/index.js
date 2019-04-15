@@ -11,11 +11,6 @@ import { API_PORT } from "./config";
 
 const PORT = API_PORT || 3000;
 
-const corsOptions = {
-  origin: "http://181.199.74.186:3000",
-  credentials: true
-};
-
 const app = express();
 app.use(cors());
 
@@ -30,7 +25,7 @@ const server = new ApolloServer({
   context: { db }
 });
 
-server.applyMiddleware({ app, cors: corsOptions });
+server.applyMiddleware({ app });
 
 const httpServer = createServer(app);
 
