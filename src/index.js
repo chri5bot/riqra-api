@@ -14,9 +14,6 @@ const server = new ApolloServer({
 const app = express();
 server.applyMiddleware({ app });
 
-app.use(query());
-server.applyMiddleware({ app, path });
-
 app.listen({ port: PORT }, () => {
   console.log(`🚀 Server ready at ${PORT}${server.graphqlPath}`);
   db.sequelize
